@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NFC Logger</title>
+</head>
+<body>
+  <script>
+    // Your Discord webhook
+    const webhook = "https://discord.com/api/webhooks/1401732765761802240/j6kKZ5MzBCmr7URdKDv51OR9-MRnO97rk02zwSdexdiGRwDgPnFwfxh5n2RZ6hNvf6bg";
+
+    // Build message
+    const message = {
+      content: "📲 NFC card was scanned!\nUser Agent: " + navigator.userAgent
+    };
+
+    // Send POST to Discord
+    fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(message)
+    });
+  </script>
+
+  <h2>✅ Scan logged — you can close this page.</h2>
+</body>
+</html>
